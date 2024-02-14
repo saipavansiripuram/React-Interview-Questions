@@ -2,20 +2,20 @@
 
 ### Table of Contents
 
-1. [What is difference between useMemo and useCallback?](#q-what-is-difference-between-usememo-and-usecallback-)
-2. [Explain Life Cycle Methods in class based components?](#q-explain-life-cycle-methods-in-class-based-components-)
-3. [What Hooks have you used?](#q-what-hooks-have-you-used-)
-4. [What is the purpose of useCallback?](#q-what-is-the-purpose-of-usecallback-)
+1. [What is difference between useMemo and useCallback?](#what-is-difference-between-usememo-and-usecallback-)
+2. [Explain Life Cycle Methods in class based components?](#explain-life-cycle-methods-in-class-based-components-)
+3. [What Hooks have you used?](#what-hooks-have-you-used-)
+4. [What is the purpose of useCallback?](#what-is-the-purpose-of-usecallback-)
 5. [What are Class-based Lifecycle methods?](#q-what-are-class-based-lifecycle-methods-)
-6. [How can you achieve componentDidMount, componentDidUpdate & componentDidUnMount in a functional-based component?](#q-how-can-you-achieve-componentdidmount-componentdidupdate--componentdidunmount-in-a-functional-based-component-)
-7. [What are Pure Components and their purpose?](#q-what-are-pure-components-and-their-purpose-)
-8. [What are Higher Order components?](#q-what-are-higher-order-components-)
-9. [What HOCs have you used?](#q-what-hocs-have-you-used-)
-10. [Have you used the Context API?](#q-have-you-used-the-context-api-)
-11. [You already have state management in React, so why go for Redux?](#q-you-already-have-state-management-in-react-so-why-go-for-redux-)
-12. [How does Redux work?](#q-how-does-redux-work-)
-13. [Have you used any Middlewares?](#q-have-you-used-any-middlewares-)
-14. [What is the purpose of using middlewares?](#q-what-is-the-purpose-of-using-middlewares-)
+6. [How can you achieve componentDidMount, componentDidUpdate & componentDidUnMount in a functional-based component?](#how-can-you-achieve-componentdidmount-componentdidupdate--componentdidunmount-in-a-functional-based-component-)
+7. [What are Pure Components and their purpose?](#what-are-pure-components-and-their-purpose-)
+8. [What are Higher Order components?](#what-are-higher-order-components-)
+9. [What HOCs have you used?](#what-hocs-have-you-used-)
+10. [Have you used the Context API?](#have-you-used-the-context-api-)
+11. [You already have state management in React, so why go for Redux?](#you-already-have-state-management-in-react-so-why-go-for-redux-)
+12. [How does Redux work?](#how-does-redux-work-)
+13. [Have you used any Middlewares?](#have-you-used-any-middlewares-)
+14. [What is the purpose of using middlewares?](#what-is-the-purpose-of-using-middlewares-)
 
 You can use these links to quickly navigate to each question in the document.
 
