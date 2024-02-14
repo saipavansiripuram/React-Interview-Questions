@@ -4,7 +4,7 @@
 
 1. [What is difference between useMemo and useCallback?](#what-is-difference-between-usememo-and-usecallback-)
 2. [Explain Life Cycle Methods in class based components?](#explain-life-cycle-methods-in-class-based-components-)
-3. [What Hooks have you used?](#what-hooks-have-you-used-)
+3. [What Hooks have you used?](#what-hooks-have-you-used?-)
 4. [What is the purpose of useCallback?](#what-is-the-purpose-of-usecallback-)
 5. [What are Class-based Lifecycle methods?](#q-what-are-class-based-lifecycle-methods-)
 6. [How can you achieve componentDidMount, componentDidUpdate & componentDidUnMount in a functional-based component?](#how-can-you-achieve-componentdidmount-componentdidupdate--componentdidunmount-in-a-functional-based-component-)
@@ -134,7 +134,7 @@ It's important to note that with the introduction of React Hooks in functional c
 
 
 
-3. ### What Hooks have you used?
+3. ### What hooks have you used?
 
 I've used several React Hooks, including:
 - `useState`: For managing state in functional components.
