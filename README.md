@@ -1,6 +1,25 @@
 # React-Interview-Questions
 
-## Q: What is difference between useMemo and useCallback ?
+### Table of Contents
+
+1. [What is difference between useMemo and useCallback?](#q-what-is-difference-between-usememo-and-usecallback-)
+2. [Explain Life Cycle Methods in class based components?](#q-explain-life-cycle-methods-in-class-based-components-)
+3. [What Hooks have you used?](#q-what-hooks-have-you-used-)
+4. [What is the purpose of useCallback?](#q-what-is-the-purpose-of-usecallback-)
+5. [What are Class-based Lifecycle methods?](#q-what-are-class-based-lifecycle-methods-)
+6. [How can you achieve componentDidMount, componentDidUpdate & componentDidUnMount in a functional-based component?](#q-how-can-you-achieve-componentdidmount-componentdidupdate--componentdidunmount-in-a-functional-based-component-)
+7. [What are Pure Components and their purpose?](#q-what-are-pure-components-and-their-purpose-)
+8. [What are Higher Order components?](#q-what-are-higher-order-components-)
+9. [What HOCs have you used?](#q-what-hocs-have-you-used-)
+10. [Have you used the Context API?](#q-have-you-used-the-context-api-)
+11. [You already have state management in React, so why go for Redux?](#q-you-already-have-state-management-in-react-so-why-go-for-redux-)
+12. [How does Redux work?](#q-how-does-redux-work-)
+13. [Have you used any Middlewares?](#q-have-you-used-any-middlewares-)
+14. [What is the purpose of using middlewares?](#q-what-is-the-purpose-of-using-middlewares-)
+
+You can use these links to quickly navigate to each question in the document.
+
+1. ### What is difference between useMemo and useCallback ?
 
 `useMemo` is a React Hook that lets you cache the result of a calculation between re-renders.
 
@@ -61,7 +80,7 @@ In this example, the `memoizedCallback` function will only be recreated if the d
   - Use `useCallback` when you want to memoize a callback function and only recreate it when specific dependencies change.
   - Useful for optimizing the performance of callback functions, especially when passing them to child components, preventing unnecessary re-renders.
 
-## Q: Explain Life Cycle Methods in class based components ?
+2. ### Explain Life Cycle Methods in class based components ?
 
 In class-based components in React, the lifecycle of a component refers to the series of phases that a component goes through, from its creation to its removal from the DOM. The lifecycle methods are functions that are automatically called at different points during the existence of a component. Here are the main phases of the lifecycle in class-based components:
 
@@ -115,7 +134,7 @@ It's important to note that with the introduction of React Hooks in functional c
 
 
 
-## Q: What Hooks have you used?
+3. ### What Hooks have you used?
 
 I've used several React Hooks, including:
 - `useState`: For managing state in functional components.
@@ -126,15 +145,15 @@ I've used several React Hooks, including:
 - `useMemo`: For memoizing values to optimize performance.
 - `useRef`: For accessing and interacting with the DOM or keeping mutable values between renders.
 
-## Q: What is the purpose of useCallback?
+4. ### What is the purpose of useCallback?
 
 `useCallback` is used to memoize a callback function in React. It returns a memoized version of the callback function that only changes if one of the dependencies has changed. The purpose is to optimize performance by preventing unnecessary re-creation of callback functions, especially in scenarios where these functions are passed as props to child components. This can help in avoiding unnecessary re-renders of child components when the parent component updates.
 
-## Q: What are Class-based Lifecycle methods?
+5. ### What are Class-based Lifecycle methods?
 
 Class-based lifecycle methods are methods that are available in class components in React. They are invoked at different points in the lifecycle of a component, including mounting, updating, and unmounting. Some key class-based lifecycle methods include `componentDidMount`, `componentDidUpdate`, `componentWillUnmount`, and others. These methods allow developers to execute code at specific points in a component's existence.
 
-## Q: How can you achieve componentDidMount, componentDidUpdate & componentDidUnMount in a functional-based component?
+6. ### How can you achieve componentDidMount, componentDidUpdate & componentDidUnMount in a functional-based component?
 
 In functional components, you can achieve similar functionality to class-based lifecycle methods using the `useEffect` hook:
 - `componentDidMount`: You can use `useEffect` with an empty dependency array to simulate the behavior of `componentDidMount`.
@@ -160,23 +179,23 @@ const MyComponent = () => {
 };
 ```
 
-## Q: What are Pure Components and their purpose?
+7. ### What are Pure Components and their purpose?
 
 Pure Components are class components in React that extend the `React.PureComponent` class instead of the regular `React.Component` class. The purpose of Pure Components is to optimize performance by automatically implementing a `shouldComponentUpdate` method that performs a shallow comparison of props and state. If the props and state haven't changed, the component won't re-render, preventing unnecessary updates and potentially improving performance.
 
-## Q: What are Higher Order components?
+8. ### What are Higher Order components?
 
 Higher Order Components (HOCs) are functions that take a component and return a new component with enhanced functionality. HOCs enable code reuse, logic abstraction, and the composition of multiple behaviors. They are commonly used for tasks like managing state, handling authentication, or adding specific functionalities to components without modifying their core logic.
 
-## Q: What HOCs have you used?
+9. ### What HOCs have you used?
 
 I have used various HOCs, including libraries like `react-redux` that provide HOCs such as `connect` for integrating Redux with React components. Additionally, I have implemented custom HOCs for tasks like authentication, logging, and code reuse.
 
-## Q: Have you used the Context API?
+10. ### Have you used the Context API?
 
 Yes, I have used the Context API in React. The Context API provides a way to pass data through the component tree without having to pass props manually at every level. It consists of the `React.createContext` function, `Context.Provider`, and `Context.Consumer`. It is particularly useful for sharing values like themes, authentication status, or language preferences across components.
 
-## Q: You already have state management in React, so why go for Redux?
+11. ### You already have state management in React, so why go for Redux?
 
 While React's built-in state management is suitable for managing local component state, Redux is a state management library that provides a centralized store to manage the global state of an application. Reasons to use Redux include:
 - Managing complex state that needs to be shared across components.
@@ -185,7 +204,7 @@ While React's built-in state management is suitable for managing local component
 - Middleware support for handling asynchronous actions.
 - Easy integration with React components using the `react-redux` library.
 
-## Q: How does Redux work?
+12. ### How does Redux work?
 
 Redux follows a unidirectional data flow. The flow involves:
 1. **Action:** A plain JavaScript object that describes a change in the state. It must have a `type` property and can optionally carry payload data.
@@ -193,11 +212,11 @@ Redux follows a unidirectional data flow. The flow involves:
 3. **Store:** An object that holds the state tree of the application. It has methods to dispatch actions and subscribe to state changes.
 4. **Middleware:** Functions that can intercept and modify actions before they reach the reducer, or perform asynchronous tasks. Middleware enhances the functionality of Redux.
 
-## Q: Have you used any Middlewares?
+13. ### Have you used any Middlewares?
 
 Yes, I have used middlewares in Redux to handle asynchronous actions, log actions, and integrate with external services. Popular middlewares include `redux-thunk` for handling asynchronous actions, `redux-logger` for logging actions, and custom middleware for specific application needs.
 
-## Q: What is the purpose of using middlewares?
+14. ### What is the purpose of using middlewares?
 
 Middlewares in Redux provide a way to extend the capabilities of the store's dispatch function. Their purposes include:
 - **Handling Asynchronous Actions:** Middleware like `redux-thunk` allows dispatching functions, enabling asynchronous logic in action creators.
