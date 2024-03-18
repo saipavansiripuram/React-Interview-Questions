@@ -328,7 +328,7 @@ In summary, React handles updates and rendering by utilizing the virtual DOM to 
 
   **[⬆ Back to Top](#table-of-contents)**
 
-18. ### How does data flow & what are "props" and "state" ?
+18. ### How does data flow and what are "props" and "state" ?
 
 <img width="1196" alt="Screenshot 2024-03-18 at 12 13 56" src="https://github.com/saipavansiripuram/React-Interview-Questions/assets/69411783/9ae153f4-df63-4e7d-8499-bd8fa4319d5b">
 
@@ -400,7 +400,7 @@ Understanding how props and state work is essential for building React applicati
 
   **[⬆ Back to Top](#table-of-contents)**
 
-19. ### Differentiate Between Server & Client Side Rendering?
+19. ### Differentiate Between Server and Client Side Rendering?
     
 Server-side rendering (SSR) and client-side rendering (CSR) are two different approaches used in web development to render content on a webpage. Here's a breakdown of the differences between the two:
 
