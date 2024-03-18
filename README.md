@@ -20,7 +20,7 @@
 16. [What is the purpose of React's virtual DOM ?](#what-is-the-purpose-of-reacts-virtual-DOM-)
 17. [How does React handle updates and rendering? What is reconciliation ?](#how-does-react-handle-updates-and-rendering-what-is-reconciliation-)
 18. [How does data flow and what are "props" and "state" ?](#how-does-data-flow-and-what-are-props-and-state-)
-19. [Differentiate Between Server and Client Side Rendering?](#differentiate-between-server-and-client-side-rendering-)
+19. [Differentiate between Server and Client Side Rendering?](#differentiate-between-server-and-client-side-rendering)
 20. [What are the uses of Refs ?](#what-are-the-uses-of-refs-)
 21. [What is React Fiber ?](#what-is-react-fiber-)
 22. [What are Synthetic events in React ?](#what-are-synthetic-events-in-react-)
@@ -400,7 +400,7 @@ Understanding how props and state work is essential for building React applicati
 
   **[⬆ Back to Top](#table-of-contents)**
 
-19. ### Differentiate Between Server and Client Side Rendering?
+19. ### Differentiate between Server and Client Side Rendering?
     
 Server-side rendering (SSR) and client-side rendering (CSR) are two different approaches used in web development to render content on a webpage. Here's a breakdown of the differences between the two:
 
