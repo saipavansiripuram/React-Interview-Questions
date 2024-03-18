@@ -16,6 +16,14 @@
 12. [How does Redux work?](#how-does-redux-work-)
 13. [Have you used any Middlewares?](#have-you-used-any-middlewares-)
 14. [What is the purpose of using middlewares?](#what-is-the-purpose-of-using-middlewares-)
+15. [How does it differ from other JavaScript frameworks?](#how-does-it-differ-from-other-javaScript-frameworks-)
+16. [What is the purpose of React's virtual DOM ?](#what-is-the-purpose-of-React's-virtual-DOM-)
+17. [How does React handle updates and rendering? What is reconciliation ?](#how-does-React-handle-updates-and-rendering-what-is-reconciliation-)
+18. [How does data flow & what are "props" and "state" ?](how-does-data-flow-and-what-are-props-and-state-)
+19. [Differentiate Between Server & Client Side Rendering?](#differentiate-between-server-and-client-side-rendering-)
+20. [What are the uses of Refs ?](what-are-the-uses-of-refs-)
+21. [What is React Fiber ?](#what-is-react-fiber-)
+22. [What are Synthetic events in React ?](#what-are-synthetic-events-in-react-)
 
 You can use these links to quickly navigate to each question in the document.
 
@@ -251,5 +259,228 @@ Middlewares in Redux provide a way to extend the capabilities of the store's dis
 - **Enhancing Dispatch:** Middlewares can modify or enhance the dispatch function to add custom behavior before or after the action is processed by the reducers.
 
 Middleware allows developers to extend and customize the behavior of Redux to suit the specific needs of an application.
+
+  **[⬆ Back to Top](#table-of-contents)**
+
+
+15. ### How does it differ from other JavaScript frameworks?
+    
+React is not a framework; it is a JavaScript library with distinctive features that set it apart from traditional frameworks. Here's how React stands out:
+
+1. **Virtual DOM**: React operates on a virtual DOM. It maintains an in-memory representation of the actual browser DOM. When the state of a component changes, React creates a new virtual DOM representation and efficiently compares it with the previous one. This approach avoids direct manipulation of the DOM, enhancing performance.
+
+2. **View-oriented**: React primarily focuses on the view layer of an application. It offers a declarative way to construct UI components and efficiently manages their rendering.
+
+3. **Unidirectional flow**: React follows a unidirectional data flow pattern, where data flows in a single direction from parent components to child components. This promotes a predictable data flow, simplifying debugging and enhancing understanding of the application's state.
+
+4. **Component-based architecture**: React promotes a component-based architecture, where UIs are composed of modular and reusable components. Components can be nested and composed to create complex UI structures, facilitating code reuse and maintainability.
+
+In conclusion, React is a library that offers powerful tools for building user interfaces with its virtual DOM, view-oriented approach, unidirectional data flow, and component-based architecture. Developers can choose to incorporate React into their technology stack to leverage its benefits in building modern web applications.
+
+**Note**: React is often chosen as a foundational library in front-end development stacks due to its flexibility, performance, and extensive ecosystem.
+
+  **[⬆ Back to Top](#table-of-contents)**
+
+
+16. ### What is the purpose of React's virtual DOM ?
+
+In web development, the Document Object Model (DOM) serves as an interface for web documents, representing the structure of a document as a tree of objects. Each object in the DOM corresponds to a part of the document, such as elements, attributes, and text.
+
+When a web page is loaded in a browser, the browser creates a DOM representation of the HTML markup. This DOM can be manipulated using scripting languages like JavaScript, enabling developers to dynamically modify, add, or remove elements and content from the page, resulting in interactive and dynamic web experiences.
+
+However, directly manipulating the DOM can be inefficient, especially when dealing with complex UIs or frequent updates. This inefficiency arises because every change to the DOM triggers reflows and repaints, which can degrade performance, particularly on large-scale applications.
+
+
+To address this issue, React introduces the concept of a virtual DOM. The virtual DOM is a lightweight, in-memory representation of the actual DOM. When a component's state changes in React, instead of directly updating the DOM, React first updates the virtual DOM.
+
+<img width="1092" alt="Screenshot 2024-03-18 at 12 01 16" src="https://github.com/saipavansiripuram/React-Interview-Questions/assets/69411783/59a020e8-1c8e-4f5e-8c72-e2ceb854cbbc">
+
+React then compares the updated virtual DOM with the previous virtual DOM snapshot to determine the minimal set of changes needed to synchronize the actual DOM. This process, known as reconciliation, significantly reduces the number of DOM manipulations required, leading to improved performance.
+
+The key purposes of React's virtual DOM are:
+
+1. **Efficiency**: By working with a virtual representation of the DOM, React minimizes the number of actual DOM manipulations needed, resulting in faster rendering and improved performance.
+
+2. **Optimization**: React's reconciliation algorithm optimizes the process of updating the actual DOM by identifying and applying only the necessary changes, reducing unnecessary reflows and repaints.
+
+3. **Abstraction**: The virtual DOM abstracts away the complexities of directly manipulating the DOM, allowing developers to focus on building UI components and managing application state without worrying about performance optimizations.
+
+In summary, React's virtual DOM enhances performance and developer productivity by providing an efficient and optimized mechanism for updating the actual DOM in response to changes in component state.
+
+
+  **[⬆ Back to Top](#table-of-contents)**
+
+17. ### How does React handle updates and rendering? What is reconciliation ?
+
+Data reconciliation is represented as a phase of verification of records during data migration. In this phase, target data is compared with source information to provide that the migration structure is assigning data.
+
+In React, handling updates and rendering revolves around the concept of the virtual DOM and a process called reconciliation.
+
+1. **Virtual DOM**: React maintains a virtual representation of the actual DOM known as the virtual DOM. This virtual DOM is a lightweight, in-memory copy of the real DOM structure. When the state of a component changes, React first updates this virtual DOM rather than directly manipulating the actual DOM.
+
+2. **Reconciliation**: Reconciliation is the process through which React determines the minimal set of changes needed to synchronize the virtual DOM with the actual DOM. When a component's state changes, React performs reconciliation to compute the differences between the new virtual DOM and the previous one.
+
+During reconciliation, React compares the new virtual DOM with the previous virtual DOM snapshot to identify the components that need to be updated. It then efficiently applies these changes to the actual DOM, minimizing the number of DOM manipulations required.
+
+Data reconciliation, on the other hand, is a phase in data migration where target data is compared with source information to ensure that the migration process accurately transfers data. It involves verifying records and ensuring that data integrity is maintained throughout the migration process.
+
+In summary, React handles updates and rendering by utilizing the virtual DOM to efficiently compute and apply changes to the actual DOM through the process of reconciliation. This approach enhances performance and ensures that the UI remains in sync with the underlying component state.
+
+  **[⬆ Back to Top](#table-of-contents)**
+
+18. ### How does data flow & what are "props" and "state" ?
+
+<img width="1196" alt="Screenshot 2024-03-18 at 12 13 56" src="https://github.com/saipavansiripuram/React-Interview-Questions/assets/69411783/9ae153f4-df63-4e7d-8499-bd8fa4319d5b">
+
+In React, understanding how data flows between components is crucial. Let's break down two important concepts: "props" and "state."
+
+**1. Props (Properties):**
+   - Props allow components to pass data from a parent component to its child components.
+   - Props are read-only and cannot be modified by the child components. They are immutable.
+   - When the parent component updates its props, React automatically re-renders the child components with the new props.
+   - Think of props as the way components communicate with each other, passing along information that influences how they render.
+   - For example, imagine a parent component called `ParentComponent` passing a message to a child component called `ChildComponent`.
+
+   - In `ParentComponent`, you might have:
+     ```jsx
+     function ParentComponent() {
+       const message = "Hello from Parent!";
+       return <ChildComponent message={message} />;
+     }
+     ```
+   - In `ChildComponent`, you can access the `message` prop passed by `ParentComponent`:
+     ```jsx
+     function ChildComponent(props) {
+       return <p>{props.message}</p>;
+     }
+     ```
+
+**2. State:**
+   - State allows components to manage and update their own data internally.
+   - Unlike props, state is internal to a component and can be modified using the setState() method.
+   - State represents the data that can change over time, such as user input, fetched data, or component-specific data.
+   - Changes to the state trigger re-rendering of the component, updating the UI to reflect the new state.
+   - While props are read-only and passed from parent to child components, state is managed internally within a component.
+   - For example, let's create a simple counter component that keeps track of a count value internally.
+   - In `CounterComponent`:
+     ```jsx
+     import React, { useState } from 'react';
+
+     function CounterComponent() {
+       const [count, setCount] = useState(0);
+
+       const incrementCount = () => {
+         setCount(count + 1);
+       };
+
+       return (
+         <div>
+           <p>Count: {count}</p>
+           <button onClick={incrementCount}>Increment</button>
+         </div>
+       );
+     }
+     ```
+
+In this example:
+- `ParentComponent` passes the `message` prop to `ChildComponent`, allowing them to communicate.
+- `ChildComponent` receives and displays the `message` prop from its parent.
+- `CounterComponent` manages its own `count` state internally and updates it when the button is clicked.
+
+
+Simple Explanation:
+
+- Props are like messages passed between components, allowing them to share information. They're one-way, from parent to child.
+- State is like a component's memory. It stores data that can change over time, influencing how the component behaves and looks.
+- Props are passed down, while state is kept within the component itself.
+- Props are like giving instructions to a friend, while state is like remembering information for yourself.
+
+Understanding how props and state work is essential for building React applications. Props facilitate communication between components, while state enables components to manage their data dynamically.
+
+
+  **[⬆ Back to Top](#table-of-contents)**
+
+19. ### Differentiate Between Server & Client Side Rendering?
+    
+Server-side rendering (SSR) and client-side rendering (CSR) are two different approaches used in web development to render content on a webpage. Here's a breakdown of the differences between the two:
+
+1. **Rendering Process**:
+   - **Server-side Rendering (SSR)**: In SSR, the server generates the HTML for a webpage and sends the fully rendered page to the client's browser. The browser then displays the content to the user. This means that the initial HTML content is already present when the user first loads the page.
+   - **Client-side Rendering (CSR)**: In CSR, the server sends a minimal HTML document to the client's browser, often just containing the basic structure of the webpage and references to JavaScript files. The browser then downloads these JavaScript files and executes them to render the content dynamically. The content is generated on the client side, typically using JavaScript frameworks like React, Angular, or Vue.js.
+
+2. **Performance**:
+   - **Server-side Rendering (SSR)**: SSR can provide faster initial page loads because the server sends fully rendered HTML to the client, reducing the amount of processing required on the client side. However, subsequent interactions may be slower because additional requests to the server may be needed for dynamic updates.
+   - **Client-side Rendering (CSR)**: CSR may result in slower initial page loads since the browser needs to download and execute JavaScript files before rendering the content. However, once the initial page is loaded, subsequent interactions and updates can be faster since they can be handled locally without needing to communicate with the server as frequently.
+
+3. **SEO (Search Engine Optimization)**:
+   - **Server-side Rendering (SSR)**: SSR is generally better for SEO because search engine crawlers can easily parse the fully rendered HTML content sent by the server, which helps in indexing the page's content.
+   - **Client-side Rendering (CSR)**: CSR can present challenges for SEO because search engine crawlers may not execute JavaScript when indexing pages. This means that the content generated dynamically on the client side may not be indexed properly, potentially affecting the page's search engine ranking.
+
+4. **Resource Consumption**:
+   - **Server-side Rendering (SSR)**: SSR may require more server resources, as the server needs to generate HTML for each request.
+   - **Client-side Rendering (CSR)**: CSR can offload some of the rendering work to the client's browser, reducing the server load. However, it can increase the client's device resource usage, especially on less powerful devices.
+
+In summary, server-side rendering is suited for faster initial page loads and better SEO, while client-side rendering provides more dynamic and interactive user experiences. The choice between SSR and CSR depends on factors such as performance requirements, SEO considerations, and the nature of the application.
+
+
+  **[⬆ Back to Top](#table-of-contents)**
+
+20. ### What are the uses of Refs ?
+
+Refs in React are used to directly access DOM elements or React components created in the render method. They provide a way to interact with the underlying DOM nodes or React components imperatively. Here are some common uses of refs in React:
+
+1. **Accessing DOM elements**: Refs can be used to reference DOM elements directly and perform imperative operations such as focusing an input field, measuring an element's dimensions, or animating an element.
+
+2. **Managing focus**: Refs can be used to manage focus within a React component, for example, focusing on a specific input field or button when a component mounts or when a certain condition is met.
+
+3. **Integrating with third-party libraries**: Refs can be used to integrate React components with third-party libraries that expect direct access to DOM nodes, such as charting libraries, animation libraries, or rich text editors.
+
+4. **Interacting with child components**: Refs can be used to interact with child components by obtaining references to them and calling their methods or accessing their properties directly. This can be useful for cases where parent components need to communicate with specific child components imperatively.
+
+5. **Implementing custom functionality**: Refs can be used to implement custom functionality within React components that cannot be achieved using React's declarative approach. For example, implementing custom form validation logic or implementing a custom scroll behavior.
+
+6. **Optimizing performance**: Refs can be used to optimize performance by avoiding unnecessary re-renders. By obtaining references to specific DOM elements or components, React components can avoid re-rendering when only a subset of the component's state or props changes.
+
+Overall, refs provide a way to interact with the underlying DOM or React components in situations where the declarative approach of React is not sufficient or where direct imperative control is necessary. However, they should be used sparingly and only when necessary, as excessive use of refs can lead to code that is harder to understand and maintain.
+
+
+  **[⬆ Back to Top](#table-of-contents)**
+
+21. ### What is React Fiber ?
+    
+React Fiber is a complete reimplementation of the React core algorithm, designed to improve the performance and rendering capabilities of React applications. It was introduced in React version 16.
+
+Here are some key points about React Fiber:
+
+1. **Improved Rendering Pipeline**: Fiber introduces a new reconciliation algorithm that allows React to break down the rendering work into smaller, incremental units called fibers. This enables React to prioritize and schedule the rendering work more efficiently, resulting in better perceived performance and smoother user experiences.
+
+2. **Incremental Rendering**: With Fiber, React can now interrupt the rendering process to handle high-priority updates, such as user interactions or animations, without blocking the main thread. This incremental rendering approach helps to minimize jank and improve responsiveness in React applications.
+
+3. **Better Support for Asynchronous Rendering**: Fiber provides better support for asynchronous rendering, allowing React to pause and resume rendering work as needed. This is particularly useful for handling large and complex component trees, as well as for optimizing performance on lower-powered devices.
+
+4. **Support for Concurrent Mode**: Fiber lays the foundation for Concurrent Mode in React, which enables React to work on multiple tasks concurrently without blocking the main thread. Concurrent Mode allows React to prioritize and schedule rendering work dynamically based on the user's interactions and the device's capabilities, further improving the performance and responsiveness of React applications.
+
+5. **Improved Error Handling**: Fiber improves error handling and debugging capabilities in React by introducing better error boundaries and error handling mechanisms. This makes it easier to diagnose and troubleshoot issues in React applications, helping developers build more robust and reliable user interfaces.
+
+Overall, React Fiber represents a significant advancement in the React framework, focusing on performance, concurrency, and improved developer experience. While most of its optimizations are under the hood and transparent to developers, they contribute to making React applications faster, more responsive, and more scalable.
+
+
+  **[⬆ Back to Top](#table-of-contents)**
+
+22. ### What are Synthetic events in React ?
+
+Synthetic events in React are special event objects that provide a consistent interface for handling events across different browsers. They are a wrapper around native browser events, providing a unified API that abstracts away the differences between browser implementations. Here are some key points about synthetic events:
+
+1. **Cross-Browser Compatibility**: Synthetic events ensure consistent behavior across different browsers, abstracting away browser-specific quirks and inconsistencies. This makes it easier to write event handling code that works reliably across various environments.
+
+2. **Performance Optimization**: Synthetic events are optimized for performance. Instead of creating a new event object for each event handler, React reuses a single synthetic event object and recycles it for subsequent events. This helps to reduce memory overhead and improve overall performance.
+
+3. **Event Delegation**: React uses event delegation to handle events efficiently. Instead of attaching event handlers directly to individual DOM elements, React attaches a single event listener to the root of the document and uses event bubbling to propagate events to the appropriate components. This approach minimizes the number of event listeners and improves performance, especially in applications with many event handlers.
+
+4. **Cross-Platform Development**: Synthetic events abstract away platform-specific differences, making it easier to write code that works consistently across different platforms, such as web browsers, mobile devices, and server-side rendering environments.
+
+5. **Additional Features**: Synthetic events provide additional features and capabilities beyond native browser events. For example, they support features like event pooling, event normalization, and automatic event handling for controlled components in React.
+
+Overall, synthetic events in React provide a unified and efficient mechanism for handling events, ensuring consistent behavior and improved performance across different environments. They are a fundamental part of event handling in React applications and play a crucial role in building interactive and responsive user interfaces.
 
   **[⬆ Back to Top](#table-of-contents)**
