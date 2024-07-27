@@ -24,6 +24,7 @@
 20. [What are the uses of Refs ?](#what-are-the-uses-of-refs-)
 21. [What is React Fiber ?](#what-is-react-fiber-)
 22. [What are Synthetic events in React ?](#what-are-synthetic-events-in-react-)
+23. [react testing](#react-testing)
 
 You can use these links to quickly navigate to each question in the document.
 
